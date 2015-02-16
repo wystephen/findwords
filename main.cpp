@@ -17,30 +17,40 @@ int main()
     int i(0);
     for( i=0;i<50;i++)
     {
-        if(line[i] == '\0') break;
+
         if(line[i] >= 'A' && line[i] <= 'Z')
         {
             line[i]= 'a' + line[i]-'A';
+            continue;
         }
+        if(line[i] < 'a' ||line[i] >'z') break;
 
     }
     int sum(0);
-    for(;i>0;i--)
+    i--;
+    for(;i>-1;i--)
     {
         if(line[i] >='a' && line[i] <='z')
         sum+=(line[i]-'a'+1);
+       // char tmp=line[i];
+        printf("--%c--",line[i]);
+
+
     }
+    cout << endl;
     //string k;
 
 
 
 
     if(sum == 100)
-    {cout <<sum;
+    {
+        cout <<sum;
         printf("%s",line);
         cout <<endl;
 
         out.write(line,49);
+        out << endl;
     }
 
     }
